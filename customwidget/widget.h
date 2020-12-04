@@ -2,19 +2,22 @@
 
 #include <QFrame>
 
-class Application;
-
 class Widget : public QFrame {
 
+  Q_OBJECT;
+
   public:
-    Widget(Application *parent = nullptr);
+    Widget(QWidget *parent = nullptr);
+
+  public slots:
+    void setValue(int);
 
   protected:
     void paintEvent(QPaintEvent *e);
     void drawWidget(QPainter &qp);
 
   private:
-    Application *app;
+    int cur_width;
 
     static constexpr int DISTANCE = 19;
     static constexpr int LINE_WIDTH = 5;

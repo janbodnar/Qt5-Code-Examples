@@ -1,13 +1,18 @@
 #include <QtGui>
 #include "widget.h"
-#include "application.h"
 
 const int PANEL_HEIGHT = 30;
 
-Widget::Widget(Application *parent)
-    : QFrame(parent), app{parent} {
+Widget::Widget(QWidget *parent)
+    : QFrame(parent), cur_width(0) {
 
   setMinimumHeight(PANEL_HEIGHT);
+}
+
+void Widget::setValue(int value)
+{
+  cur_width = value;
+  repaint();
 }
 
 void Widget::paintEvent(QPaintEvent *e) {
@@ -29,8 +34,6 @@ void Widget::drawWidget(QPainter &qp) {
   QColor yellowColor(255, 255, 184);
 
   int width = size().width();
-
-  int cur_width = app->getCurrentWidth();
 
   int step = (int) qRound((double)width / DIVISIONS);
   int till = (int) ((width / MAX_CAPACITY) * cur_width);
