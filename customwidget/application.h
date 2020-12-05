@@ -11,15 +11,10 @@ class Application : public QFrame {
 
   public:
     Application(QWidget *parent = nullptr);
-    int getCurrentWidth();
-
-  public slots:
-    void valueChanged(int);
 
   private:
     QSlider *slider;
     Widget *widget;
-    int cur_width;
 
     void initUI();
 };
