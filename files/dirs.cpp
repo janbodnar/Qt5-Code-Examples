@@ -19,4 +19,6 @@ int main(void) {
   }
 
   dir.mkpath("temp/newdir");
+  
+  return 0;
 }
