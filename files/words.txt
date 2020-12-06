@@ -1,0 +1,9 @@
+sky
+blue
+cloud
+falcon
+forest
+lake
+cup
+bear
+wolf
