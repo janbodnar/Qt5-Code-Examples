@@ -6,7 +6,7 @@ int main(int argc, char *argv[]) {
 
   AnotherMenu window;
 
-  window.resize(350, 200);
+  window.resize(350, 250);
   window.setWindowTitle("Another menu");
   window.show();
 
